@@ -8,7 +8,7 @@ let img, in1, in2, in3, in4, in5, in6, in7, in8, in9, button;
               [ 0.0625, 0.125, 0.0625 ] ]; 
 
   p.preload = function(){
-    img = p.loadImage("/showcase/sketches/mahakala.jpg");
+    img = p.loadImage("/showcase/sketches/lenna.png");
   };
 
   p.setup = function () {
