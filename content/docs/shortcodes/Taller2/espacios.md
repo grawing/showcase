@@ -10,7 +10,7 @@ Instrucciones para el manejo:
 - Para agrandar el tamaño de la brocha presione la letra "a".
 - Para disminuir el tamaño de la brocha presione la letra "m".
 
-{{< p5-global-iframe id="spaces" lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" lib3="/showcase/sketches/pressure.js" width="625" height="475" >}}
+{{< p5-global-iframe id="spaces" lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" lib3="/showcase/sketches/pressure.js" width="1020" height="520" >}}
 // Brush controls
 'use strict';
 
