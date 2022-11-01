@@ -250,6 +250,5 @@ function initPressure() {
 Basados en el desarrollo del taller, encontramos interés en el desarrollo de modelos 3D y software especializado que permita trabajar con un mayor grado de libertad. Consideramos que esta es una aproximación a lo que puede ser nuevas herramientas y áreas de trabajo en las cuales se permita manipular entornos inmersivos para la construcción de prototipos y modelos de la realidad que permitan avanzar en áreas tanto científicas como del entretenimiento, ya sean en animación de series, videojuegos, entre otros. Dado que este tipo de herramientas ofrecen la capacidad al usuario de crear mundos virtuales que puedan usarse con múltiples fines. Para trabajos futuros creemos que es importante evaluar la comodidad con la cual se manejan los controles, realizar estudios sobre su “ergonomía” e intuición para el usuario y experimentar si dicha percepción aumenta o disminuye con el uso continuo de la herramienta. Adicionalmente se promueve la idea de añadir más capacidades al entorno, como podría ser agregar la capacidad de añadir puntos de luces adicionales, permitir subir modelos ya prefabricados, guardar modelos hechos en la herramienta o que exista la posibilidad de crear su propia brocha.
 
 ### Algunos dibujos
-<br>
-![arbol](/showcase/sketches/arbol_ex.png 'arbol') <br>
-![barco](/showcase/sketches/barco_ex.png 'barco') <br>
+<img src="/showcase/sketches/arbol_ex.png"> <br>
+<img src="/showcase/sketches/barco_ex.png">
