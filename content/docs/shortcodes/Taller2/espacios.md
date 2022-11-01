@@ -21,6 +21,31 @@ Software de diseño CAD en 2D y 3D. La suscripción incluye aplicaciones y conju
 #### Revit
 Planifica, diseña, construye y administra edificios con poderosas herramientas para Modelado de información para la construcción.
 
+### Funcion pressure
+
+
+{{< details title="Código en p5.js" open=false >}}
+```js
+function initPressure() {  
+  Pressure.set('#uiCanvas', {      
+    end: function(){
+      pressure = 0;
+      },
+    change: function(force, event) {
+      pressure = force;
+    }
+  });
+
+  Pressure.config({
+    polyfill: true, 
+    polyfillSpeedUp: 1000, 
+    polyfillSpeedDown: 300,
+    preventSelect: true,
+    only: null
+       });
+}
+```
+{{< /details >}}
 
 ## Desarrollo
 
@@ -108,7 +133,7 @@ function update() {
 
 function draw() {
   update();
-  fbo1.background(120);
+  fbo1.background(140);
   fbo1.reset();
   fbo1.perspective(fovy.value());
   fbo1.axes();
@@ -117,7 +142,7 @@ function draw() {
   beginHUD();
   image(fbo1, 0, 0);
   endHUD();
-  fbo2.background(130);
+  fbo2.background(90);
   fbo2.reset();
   fbo2.axes();
   fbo2.grid();
@@ -223,3 +248,8 @@ function initPressure() {
 
 ## Conclusiones
 Basados en el desarrollo del taller, encontramos interés en el desarrollo de modelos 3D y software especializado que permita trabajar con un mayor grado de libertad. Consideramos que esta es una aproximación a lo que puede ser nuevas herramientas y áreas de trabajo en las cuales se permita manipular entornos inmersivos para la construcción de prototipos y modelos de la realidad que permitan avanzar en áreas tanto científicas como del entretenimiento, ya sean en animación de series, videojuegos, entre otros. Dado que este tipo de herramientas ofrecen la capacidad al usuario de crear mundos virtuales que puedan usarse con múltiples fines. Para trabajos futuros creemos que es importante evaluar la comodidad con la cual se manejan los controles, realizar estudios sobre su “ergonomía” e intuición para el usuario y experimentar si dicha percepción aumenta o disminuye con el uso continuo de la herramienta. Adicionalmente se promueve la idea de añadir más capacidades al entorno, como podría ser agregar la capacidad de añadir puntos de luces adicionales, permitir subir modelos ya prefabricados, guardar modelos hechos en la herramienta o que exista la posibilidad de crear su propia brocha.
+
+### Algunos dibujos
+<br>
+![arbol](/showcase/sketches/arbol_ex.png 'arbol') <br>
+![barco](/showcase/sketches/barco_ex.png 'barco') <br>
