@@ -1,0 +1,322 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Masking # Planteamiento del problema # En el procesamiento de imágenes, un kernel, matriz de convolución o máscara es una pequeña matriz que se utiliza para desenfocar, afinar, dar relieve, detectar bordes, etc. Esto se consigue haciendo una convolución entre el núcleo y una imagen. La expresión general de una convolución es
+Donde g(x,y) es la imagen filtrada, f(x,y) es la imagen original, w es el kernel del filtro. Dependiendo de los valores de los elementos, un kernel puede causar una amplia gama de efectos."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Masking # Planteamiento del problema # En el procesamiento de imágenes, un kernel, matriz de convolución o máscara es una pequeña matriz que se utiliza para desenfocar, afinar, dar relieve, detectar bordes, etc. Esto se consigue haciendo una convolución entre el núcleo y una imagen. La expresión general de una convolución es
+Donde g(x,y) es la imagen filtrada, f(x,y) es la imagen original, w es el kernel del filtro. Dependiendo de los valores de los elementos, un kernel puede causar una amplia gama de efectos."><meta property="og:type" content="article"><meta property="og:url" content="https://grawing.github.io/showcase/docs/shortcodes/Taller3/Ejercicio1/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-11-28T20:40:25-05:00"><title>Ejercicio1 | Showcase Template</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
+<script defer src=/showcase/en.search.min.504ee10b67c77ee333f5893688988153bb036079b2aa712a4099e7209103ae60.js integrity="sha256-UE7hC2fHfuMz9Yk2iJiBU7sDYHmyqnEqQJnnIJEDrmA=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/showcase/><span>Showcase Template</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/showcase/docs/shortcodes/integrantes/>Integrantes</a></li><li><input type=checkbox id=section-c04a898dd5a4aeb4a8e570b60dd467fe class=toggle>
+<label for=section-c04a898dd5a4aeb4a8e570b60dd467fe class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller1/>Taller1</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller1/Ilusiones/>Ilusiones</a></li><li><a href=/showcase/docs/shortcodes/Taller1/Kernels/>Kernels</a></li></ul></li><li><input type=checkbox id=section-fea41fae5dbf6e4b04def57e43035dbb class=toggle>
+<label for=section-fea41fae5dbf6e4b04def57e43035dbb class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller2/>Taller2</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller2/espacios/>Espacios</a></li></ul></li><li><input type=checkbox id=section-b921fe685f2f2f12f8c9f5cd76d7df43 class=toggle checked>
+<label for=section-b921fe685f2f2f12f8c9f5cd76d7df43 class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller3/>Taller3</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller3/Ejercicio1/ class=active>Ejercicio1</a></li><li><a href=/showcase/docs/shortcodes/Taller3/Ejercicio2/>Ejercicio2</a></li><li><a href=/showcase/docs/shortcodes/Taller3/Ejercicio3/>Ejercicio3</a></li></ul></li></ul></li></ul><ul><li><a href=/showcase/posts/>Blog</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/showcase/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Ejercicio1</strong>
+<label for=toc-control><img src=/showcase/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#masking>Masking</a><ul><li><a href=#planteamiento-del-problema>Planteamiento del problema</a></li><li><a href=#antecedentes>Antecedentes</a></li><li><a href=#código-solución-y-resultados>Código (solución) y resultados</a></li></ul></li><li><a href=#pixelator>Pixelator</a><ul><li><a href=#conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=masking>Masking
+<a class=anchor href=#masking>#</a></h1><h2 id=planteamiento-del-problema>Planteamiento del problema
+<a class=anchor href=#planteamiento-del-problema>#</a></h2><p>En el procesamiento de imágenes, un kernel, matriz de convolución o máscara es una pequeña matriz que se utiliza para desenfocar, afinar, dar relieve, detectar bordes, etc. Esto se consigue haciendo una convolución entre el núcleo y una imagen.
+La expresión general de una convolución es</p><p><img src=/showcase/sketches/funcion.png alt=funcion title=funcion></p><p>Donde g(x,y) es la imagen filtrada, f(x,y) es la imagen original, w es el kernel del filtro.
+Dependiendo de los valores de los elementos, un kernel puede causar una amplia gama de efectos.</p><p>Identidad. En matemáticas, una función de identidad, también llamada relación de identidad, mapa de identidad o transformación de identidad, es una función que siempre devuelve el valor que se utilizó como argumento, sin cambios. Es decir, cuando f es la función identidad, la igualdad f(X) = X es verdadera para todos los valores de X a los que se puede aplicar f. En este caso el kernel usado es el siguiente:</p><p><img src=/showcase/sketches/identidad.png alt=identidad title=identidad></p><p>Como resultado se obtendrá nuevamente la imagen original, como la descripción matemática lo indica, ya que no se hace ninguna modificación a la matriz y se deja el elemento original sin modificación alguna en la misma posición.</p><p>Detección de crestas. En el procesamiento de imágenes, la detección de crestas es el intento de localizar crestas en una imagen, definidas como curvas cuyos puntos son máximos locales de la función, similares a las crestas geográficas.
+En este caso el kernel usado es el siguiente:</p><p><img src=/showcase/sketches/crestas.png alt=crestas title=crestas></p><p>Como resultado se obtiene una imagen cuyos bordes de los objetos se encuentran resaltados, permitiendo identificar claramente los cambios de color y las regiones donde están los distintos objetos.</p><p>Afilado. Se usa un concepto similar al usado con la detección de bordes, con la idea de obtener una imagen con sus bordes delimitados de manera más explícita.
+En este caso el kernel usado es el siguiente:</p><p><img src=/showcase/sketches/afilado.png alt=afilado title=afilado></p><p>Obteniendo una imagen dentro de la cual los bordes o límites de los objetos contenidos en ella parecen ser más delimitados y distinguibles que de la imagen original, otorgando una sensación de mayor contraste.</p><p>Caja borrosa. Es un filtro lineal de dominio espacial en el que cada píxel de la imagen resultante tiene un valor igual al valor medio de sus píxeles vecinos en la imagen de entrada. Es una forma de filtro de paso bajo (&ldquo;borroso&rdquo;).
+En este caso el kernel usado es el siguiente:</p><p><img src=/showcase/sketches/caja.png alt=caja title=caja></p><p>Desenfoque Gaussiano. Es el resultado de desenfocar una imagen mediante una función gaussiana (llamada así por el matemático y científico Carl Friedrich Gauss), normalmente se utiliza para reducir el ruido de la imagen y reducir los detalles.
+En este caso el kernel usado es el siguiente:</p><p><img src=/showcase/sketches/desenfoque.png alt=desenfoque title=desenfoque></p><p>En otro sentido, también se hace consideración de dos herramientas que son útiles para el desarrollo del ejercicio y que permiten ampliar las posibilidades sobre el mismo. Como primero se analizó lo concebido como, una región de interés (a menudo abreviada ROI), que son muestras dentro de un conjunto de datos identificados para un propósito particular. Y luego, se incluyeron las ideas de una herramienta de magnificación/zoom, buscando imitar el efecto generado por las lupas. Para el zoom se utilizó la siguiente idea:</p><p><img src=/showcase/sketches/zoom.png alt=zoom title=zoom></p><p>El punto rojo representa la posición del mouse, el círculo exterior representa el espacio sobre el cúal se va a mostrar el zoom y el círculo interior el espacio al cual se le va a hacer zoom. Lo que se plantea es cómo se ve en la imágen traer a cada uno de los puntos del círculo exterior el color correspondiente a la textura del círculo interior, esto se logra asumiendo que ambos círculos tienen una línea que conecta desde el centro de estos hasta sus respectivos bordes por lo que lo necesario para traer su correspondiente se logra mapeando el valor inicial que se encuentra en el rango [centro, radio círculo exterior] en el rango [centro, radio círculo interior], y con esto se consigue encontrar la textura correspondiente.</p><h2 id=antecedentes>Antecedentes
+<a class=anchor href=#antecedentes>#</a></h2><p>El concepto de ROI se ha utilizado habitualmente en muchos ámbitos de aplicación. Por ejemplo, en las imágenes médicas, los límites de un tumor pueden definirse en una imagen o en un volumen, con el fin de medir su tamaño. El límite endocárdico puede definirse en una imagen, quizás durante diferentes fases del ciclo cardíaco, por ejemplo, al final de la sístole y al final de la diástole, con el fin de evaluar la función cardíaca. En los sistemas de información geográfica (SIG), un ROI puede tomarse literalmente como una selección poligonal de un mapa 2D. En el reconocimiento óptico de caracteres, el ROI define los límites de un objeto considerado.
+Algunos ejemplos de los usos más comunes son:</p><ul><li>Conjunto de datos 1D: un intervalo de tiempo o de frecuencia en una forma de onda,</li><li>Conjunto de datos 2D: los límites de un objeto en una imagen,</li><li>Conjunto de datos 3D: los contornos o superficies que delimitan un objeto (a veces conocido como Volumen de Interés (VOI)) en un volumen,</li><li>Conjunto de datos 4D: el contorno de un objeto en o durante un intervalo de tiempo determinado en un volumen de tiempo.</li></ul><h2 id=código-solución-y-resultados>Código (solución) y resultados
+<a class=anchor href=#c%c3%b3digo-soluci%c3%b3n-y-resultados>#</a></h2><p>Instrucciones de uso:</p><ul><li>Se tiene un selector donde se puede escoger cual es la máscara que se desea aplicar.</li><li>El botón de chequeo de “Cámara” permite activar la cámara para que sea eso lo que se pasa al shader.</li><li>El seleccionador de archivos permite subir una imágen o video para su procesamiento.</li><li>El botón de chequeo “Región de interés” permite activar que la mascara solamente se aplique a la región circular que se quiera, la cual se determina por el mouse y el tamaño está ligado al slider que se encuentra debajo del selector de archivos.</li><li>El botón de chequeo “Zoom” permite generar una región donde se magnifica la imágen, igualmente que la región de interés su posición se determina por el mouse y su tamaño por el slider.</li></ul><details><summary>Código fragment shader</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>precision</span> <span style=color:#a6e22e>mediump</span> <span style=color:#66d9ef>float</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>varying</span> <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>vTexCoord</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>sampler2D</span> <span style=color:#a6e22e>tex0</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>sampler2D</span> <span style=color:#a6e22e>vid0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>texOffset</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>mask</span>[<span style=color:#ae81ff>9</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>bool</span> <span style=color:#a6e22e>orig</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>bool</span> <span style=color:#a6e22e>bord</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>bool</span> <span style=color:#a6e22e>cam</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>bool</span> <span style=color:#a6e22e>roi</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>bool</span> <span style=color:#a6e22e>zoom</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>posY</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>posX</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>roiSize</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>float</span> <span style=color:#a6e22e>map2</span>(<span style=color:#66d9ef>float</span> <span style=color:#a6e22e>x</span>, <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>in_min</span>, <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>in_max</span>, <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>out_min</span>, <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>out_max</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> (<span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>in_min</span>) <span style=color:#f92672>*</span> (<span style=color:#a6e22e>out_max</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>out_min</span>) <span style=color:#f92672>/</span> (<span style=color:#a6e22e>in_max</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>in_min</span>) <span style=color:#f92672>+</span> <span style=color:#a6e22e>out_min</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec4</span> <span style=color:#a6e22e>convolution</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec4</span> <span style=color:#a6e22e>texel</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc0</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>s</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>t</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(         <span style=color:#ae81ff>0.0</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>t</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(<span style=color:#f92672>+</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>s</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>t</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc3</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>s</span>,          <span style=color:#ae81ff>0.0</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc4</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(         <span style=color:#ae81ff>0.0</span>,          <span style=color:#ae81ff>0.0</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc5</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(<span style=color:#f92672>+</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>s</span>,          <span style=color:#ae81ff>0.0</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc6</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>s</span>, <span style=color:#f92672>+</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>t</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc7</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(         <span style=color:#ae81ff>0.0</span>, <span style=color:#f92672>+</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>t</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>tc8</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>vec2</span>(<span style=color:#f92672>+</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>s</span>, <span style=color:#f92672>+</span><span style=color:#a6e22e>texOffset</span>.<span style=color:#a6e22e>t</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec4</span> <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>9</span>];
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span><span style=color:#a6e22e>cam</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc0</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc0</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc1</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc1</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc2</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc2</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc3</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc3</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>4</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc4</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc4</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>5</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc5</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc5</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>6</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc6</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc6</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>7</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc7</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc7</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>8</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc8</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc8</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>texel</span> <span style=color:#f92672>=</span>  <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>vTexCoord</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>vTexCoord</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc0</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc0</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc1</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc1</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc2</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc2</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc3</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc3</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>4</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc4</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc4</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>5</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc5</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc5</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>6</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc6</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc6</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>7</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc7</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc7</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rgba</span>[<span style=color:#ae81ff>8</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>tc8</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>tc8</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>texel</span> <span style=color:#f92672>=</span>  <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>vid0</span>, <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>vTexCoord</span>.<span style=color:#a6e22e>x</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>vTexCoord</span>.<span style=color:#a6e22e>y</span>));
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>9</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>convolution</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>rgba</span>[<span style=color:#a6e22e>i</span>]<span style=color:#f92672>*</span><span style=color:#a6e22e>mask</span>[<span style=color:#a6e22e>i</span>];
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>pct</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>pct</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>distance</span>(<span style=color:#a6e22e>vTexCoord</span>,<span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>posX</span>,<span style=color:#ae81ff>1.0</span><span style=color:#f92672>-</span><span style=color:#a6e22e>posY</span>)); 
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>roi</span>){
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>pct</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>roiSize</span>){
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>gl_FragColor</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vec4</span>(<span style=color:#a6e22e>convolution</span>.<span style=color:#a6e22e>rgb</span>, <span style=color:#ae81ff>1.0</span>); 
+</span></span><span style=display:flex><span>    }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>gl_FragColor</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vec4</span>(<span style=color:#a6e22e>texel</span>.<span style=color:#a6e22e>rgb</span>, <span style=color:#ae81ff>1.0</span>); 
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>zoom</span>){
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>pct</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>roiSize</span>){
+</span></span><span style=display:flex><span>      <span style=color:#75715e>//vec2 coords2 = (vec2(map2(vTexCoord.x-posX, -roiSize/2.0, roiSize/2.0, -roiSize, roiSize),map2(vTexCoord.y-(1.0-posY), -roiSize/2.0, roiSize/2.0, -roiSize, roiSize)));
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>vec4</span> <span style=color:#a6e22e>xd</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>tex0</span>, <span style=color:#a6e22e>vec2</span>(<span style=color:#a6e22e>vTexCoord</span>.<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> ((<span style=color:#a6e22e>vTexCoord</span>.<span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>posX</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>3.0</span>), <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>vTexCoord</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>+</span> (<span style=color:#a6e22e>vTexCoord</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>posY</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>3.0</span>));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>gl_FragColor</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vec4</span>(<span style=color:#a6e22e>xd</span>.<span style=color:#a6e22e>rgb</span> ,<span style=color:#ae81ff>1.0</span>);
+</span></span><span style=display:flex><span>    }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>gl_FragColor</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vec4</span>(<span style=color:#a6e22e>texel</span>.<span style=color:#a6e22e>rgb</span>, <span style=color:#ae81ff>1.0</span>); 
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>gl_FragColor</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vec4</span>(<span style=color:#a6e22e>convolution</span>.<span style=color:#a6e22e>rgb</span>, <span style=color:#ae81ff>1.0</span>); 
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details><iframe id=pyramid style=width:525px;height:525px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script>
+              
+
+let Shader;
+let tex;
+let mask;
+
+function preload(){
+  Shader = loadShader('/showcase/sketches/masking.vert', '/showcase/sketches/masking.frag');
+  tex = loadImage('/showcase/sketches/mandrill.png');
+}
+
+function setup() {
+  createCanvas(500, 500, WEBGL);
+
+  
+  inputImg = createFileInput(handleFile);
+  inputImg.position(255, 5);
+  inputImg.size(240);
+  
+  option = createSelect();
+  option.position(15, 5);
+  option.option('Original');
+  option.option('Detección de crestas');
+  option.option('Afilado');
+  option.option('Caja borrosa');
+  option.option('Desenfoque gaussiano');
+  option.selected('Original');
+  option.changed(optionEvent);
+  mask = option.value();
+  
+  media = createCheckbox('Cámara', false);
+  media.position(175, 5);
+  
+  roi = createCheckbox('Región de interes', false);
+  roi.position(15, 30);
+  
+  zoom = createCheckbox('Zoom', false);
+  zoom.position(170, 30);
+  
+  roiSize = createSlider(0.05,0.5,0.1,0.05);
+  roiSize.position(250, 30);
+  
+  vid = createCapture(VIDEO);
+  vid.size(500, 500);
+  vid.hide();
+  
+  
+}
+
+function draw() {  
+  shader(Shader);
+  Shader.setUniform('tex0', tex);
+  Shader.setUniform('vid0', vid);
+  Shader.setUniform('cam', media.checked());
+  Shader.setUniform('roi', roi.checked());
+  Shader.setUniform('zoom', zoom.checked());
+  Shader.setUniform('roiSize', roiSize.value());
+  Shader.setUniform('posX', mouseX/500);
+  Shader.setUniform('posY', mouseY/500);
+  Shader.setUniform('texOffset', [1/500,1/500]);
+  if(mask==&#34;Original&#34;){
+    Shader.setUniform('mask', [0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0]);
+  }else if(mask==&#34;Detección de crestas&#34;){
+    Shader.setUniform('mask', [-1.0,-1.0,-1.0,-1.0,8.0,-1.0,-1.0,-1.0,-1.0]);
+  }else if(mask==&#34;Afilado&#34;){
+    Shader.setUniform('mask', [0.0, -1.0, 0.0, -1.0, 5.0, -1.0, 0.0, -1.0, 0.0]);
+  }else if(mask==&#34;Caja borrosa&#34;){
+    Shader.setUniform('mask', [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]);
+  }else if(mask==&#34;Desenfoque gaussiano&#34;){
+    Shader.setUniform('mask', [0.0625, 0.125, 0.0625, 0.125, 0.25, 0.125, 0.0625, 0.125, 0.0625]);
+  }
+  rect(0,0,width, height);
+}
+
+function optionEvent() {
+  mask = option.value();
+}
+
+function vidLoad() {
+  tex.loop();
+}
+
+function handleFile(file) {
+  if (file.type === 'image') {
+    tex = createImg(file.data, '');
+    tex.hide();
+  } else {
+    tex = createVideo(file.data, vidLoad);
+    tex.hide();
+  }
+}
+
+
+            </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe><h1 id=pixelator>Pixelator
+<a class=anchor href=#pixelator>#</a></h1><p>En el procesamiento de la señal digital, el muestreo descendente (downsampling), la compresión y la decimación son términos asociados al proceso de remuestreo en un sistema de procesamiento de la señal digital multitasa. Tanto el downsampling como la decimación pueden ser sinónimos de compresión, o pueden describir un proceso completo de reducción del ancho de banda (filtrado) y de reducción de la tasa de muestreo.Cuando el proceso se realiza sobre una secuencia de muestras de una señal o una función continua, produce una aproximación de la secuencia que se habría obtenido muestreando la señal a una tasa menor.</p><p>Traducción realizada con la versión gratuita del traductor <a href=https://www.DeepL.com/Translator>www.DeepL.com/Translator</a></p><p>Al permitir tomar una imagen y convertirla en arte de píxeles, puedes definir el tamaño del píxel y crear una imagen de píxeles. Para usar la configuración rápida por defecto necesitas un elemento desde donde dibujar la imagen y un elemento canvas.</p><iframe id=pyramid style=width:525px;height:525px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script>
+              
+
+let Shader;
+let tex;
+let Borig = false, Bpix = true, Bcam = false;
+
+function preload(){
+  Shader = loadShader('/showcase/sketches/effect.vert', '/showcase/sketches/effect.frag');
+  tex = loadImage('/showcase/sketches/img.png');
+}
+
+function setup() {
+  createCanvas(500, 500, WEBGL);
+
+  tiles = createSlider(0, 150, 75);
+  tiles.position(5, 5);
+  tiles.style('width', '240px');
+  
+  inputImg = createFileInput(handleFile);
+  inputImg.position(255, 5);
+  inputImg.size(240);
+  
+  option = createSelect();
+  option.position(15, 25);
+  option.option('Original');
+  option.option('Pixelado');
+  option.selected('Pixelado');
+  option.changed(optionEvent);
+  
+  media = createCheckbox('Cámara', false);
+  media.position(100, 25);
+  media.changed(myCheckedEvent);
+  
+  vid = createCapture(VIDEO);
+  vid.size(500, 500);
+  vid.hide();
+}
+
+function draw() {  
+  shader(Shader);
+  Shader.setUniform('tex0', tex);
+  Shader.setUniform('vid0', vid);
+  Shader.setUniform('tiles0', tiles.value());
+  Shader.setUniform('orig', Borig);
+  Shader.setUniform('pix', Bpix);
+  Shader.setUniform('cam', Bcam);
+  rect(0,0,width, height);
+}
+
+function handleFile(file) {
+  if (file.type === 'image') {
+    tex = createImg(file.data, '');
+    tex.hide();
+  } else {
+    tex = createVideo(file.data, vidLoad);
+    tex.hide();
+  }
+}
+
+function optionEvent() {
+  let opt = option.value();
+  if(opt==&#34;Original&#34;){
+    Borig = true;
+    Bpix = false;
+  }else if(opt==&#34;Pixelado&#34;){
+    Borig = false;
+    Bpix = true;
+  }
+}
+
+function vidLoad() {
+  tex.loop();
+  tex.volume(0);
+}
+
+function myCheckedEvent() {
+  if (media.checked()) {
+    Bcam = true;
+  } else {
+    Bcam = false;
+  }
+}
+
+            </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe><h2 id=conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro
+<a class=anchor href=#conclusiones-y-trabajo-futuro>#</a></h2><p>Para el desarrollo de esta actividad se encontró gran utilidad en la combinación de las regiones de interés junto con las máscaras, pudimos observar cómo es que dicha combinación permite al usuario estrictamente observar las partes que son relevantes para él sin alterar la imagen totalmente, nuevamente y como se encontró en la investigación, sus usos en el análisis de tests médicos y resultados de laboratorio puede ser prometedor, facilitando la labor de identificación de anomalías, así como también creemos que sobre el análisis no sólo en materia de medicina si no en general de fotografías y/o videos que requieran identificación de anomalías puede tener una amplia aplicación desarrollando las máscaras requeridas para cada caso.</p><p>Para desarrollos futuros alentamos a desarrollar máscaras para casos específicos, como por ejemplo para la detección sobre imágenes satelitales de zonas deforestadas a través de los cambios en la vegetación y en su densidad. También pueden realizarse nuevas implementaciones sobre cómo se genera el zoom sobre la imágen como el conocido “efecto burbuja”, esto originado a partir de problemas que se observaron a la hora de intentar distintas implementaciones del efecto, generando distorsiones no deseadas en algunas áreas de la imagen proyectada, por lo que se sugiere estudiar el funcionamiento y las posibles causas.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/56675f3129201792c9f918345328edfcc4c0c5cc title='Last modified by Gustavo Mojica | November 29, 2022' target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
+<span>November 29, 2022</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#masking>Masking</a><ul><li><a href=#planteamiento-del-problema>Planteamiento del problema</a></li><li><a href=#antecedentes>Antecedentes</a></li><li><a href=#código-solución-y-resultados>Código (solución) y resultados</a></li></ul></li><li><a href=#pixelator>Pixelator</a><ul><li><a href=#conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro</a></li></ul></li></ul></nav></div></aside></main></body></html>

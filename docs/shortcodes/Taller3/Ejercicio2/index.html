@@ -1,0 +1,117 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Normal mapping # Planteamiento del problema # En los gráficos por ordenador en 3D, el mapeo normal, o mapeo de baches Dot3, es una técnica de mapeo de texturas que se utiliza para fingir la iluminación de baches y abolladuras, una implementación del mapeo de baches. Se utiliza para añadir detalles sin utilizar más polígonos. Un uso común de esta técnica es mejorar en gran medida la apariencia y los detalles de un modelo de pocos polígonos generando un mapa de normales a partir de un modelo de muchos polígonos o un mapa de altura."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Normal mapping # Planteamiento del problema # En los gráficos por ordenador en 3D, el mapeo normal, o mapeo de baches Dot3, es una técnica de mapeo de texturas que se utiliza para fingir la iluminación de baches y abolladuras, una implementación del mapeo de baches. Se utiliza para añadir detalles sin utilizar más polígonos. Un uso común de esta técnica es mejorar en gran medida la apariencia y los detalles de un modelo de pocos polígonos generando un mapa de normales a partir de un modelo de muchos polígonos o un mapa de altura."><meta property="og:type" content="article"><meta property="og:url" content="https://grawing.github.io/showcase/docs/shortcodes/Taller3/Ejercicio2/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-11-28T20:40:25-05:00"><title>Ejercicio2 | Showcase Template</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
+<script defer src=/showcase/en.search.min.504ee10b67c77ee333f5893688988153bb036079b2aa712a4099e7209103ae60.js integrity="sha256-UE7hC2fHfuMz9Yk2iJiBU7sDYHmyqnEqQJnnIJEDrmA=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/showcase/><span>Showcase Template</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/showcase/docs/shortcodes/integrantes/>Integrantes</a></li><li><input type=checkbox id=section-c04a898dd5a4aeb4a8e570b60dd467fe class=toggle>
+<label for=section-c04a898dd5a4aeb4a8e570b60dd467fe class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller1/>Taller1</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller1/Ilusiones/>Ilusiones</a></li><li><a href=/showcase/docs/shortcodes/Taller1/Kernels/>Kernels</a></li></ul></li><li><input type=checkbox id=section-fea41fae5dbf6e4b04def57e43035dbb class=toggle>
+<label for=section-fea41fae5dbf6e4b04def57e43035dbb class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller2/>Taller2</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller2/espacios/>Espacios</a></li></ul></li><li><input type=checkbox id=section-b921fe685f2f2f12f8c9f5cd76d7df43 class=toggle checked>
+<label for=section-b921fe685f2f2f12f8c9f5cd76d7df43 class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller3/>Taller3</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller3/Ejercicio1/>Ejercicio1</a></li><li><a href=/showcase/docs/shortcodes/Taller3/Ejercicio2/ class=active>Ejercicio2</a></li><li><a href=/showcase/docs/shortcodes/Taller3/Ejercicio3/>Ejercicio3</a></li></ul></li></ul></li></ul><ul><li><a href=/showcase/posts/>Blog</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/showcase/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Ejercicio2</strong>
+<label for=toc-control><img src=/showcase/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#normal-mapping>Normal mapping</a><ul><li><a href=#planteamiento-del-problema>Planteamiento del problema</a></li><li><a href=#antecedentes>Antecedentes</a></li><li><a href=#código-solución-y-resultados>Código (solución) y resultados</a></li><li><a href=#conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=normal-mapping>Normal mapping
+<a class=anchor href=#normal-mapping>#</a></h1><h2 id=planteamiento-del-problema>Planteamiento del problema
+<a class=anchor href=#planteamiento-del-problema>#</a></h2><p>En los gráficos por ordenador en 3D, el mapeo normal, o mapeo de baches Dot3, es una técnica de mapeo de texturas que se utiliza para fingir la iluminación de baches y abolladuras, una implementación del mapeo de baches. Se utiliza para añadir detalles sin utilizar más polígonos. Un uso común de esta técnica es mejorar en gran medida la apariencia y los detalles de un modelo de pocos polígonos generando un mapa de normales a partir de un modelo de muchos polígonos o un mapa de altura.</p><p>Los mapas de normales suelen almacenarse como imágenes RGB regulares en las que los componentes RGB corresponden a las coordenadas X, Y y Z, respectivamente, de la normal de la superficie.</p><p><img src=/showcase/sketches/normalMapping.jpg alt="Normal mapping" title="Normal mapping"></p><h2 id=antecedentes>Antecedentes
+<a class=anchor href=#antecedentes>#</a></h2><p>En 1978 Jim Blinn describió cómo las normales de una superficie podían ser perturbadas para hacer que las caras geométricamente planas tuvieran una apariencia detallada La idea de tomar detalles geométricos de un modelo de alta poligonización fue introducida en &ldquo;Fitting Smooth Surfaces to Dense Polygon Meshes&rdquo; por Krishnamurthy y Levoy, Proc. SIGGRAPH 1996, donde este enfoque fue utilizado para crear mapas de desplazamiento sobre nurbs. En 1998, se presentaron dos artículos con ideas clave para transferir detalles con mapas normales de mallas de alta a baja poligonación: &ldquo;Appearance Preserving Simplification&rdquo;, de Cohen et al. SIGGRAPH 1998, y &ldquo;A general method for preserving attribute values on simplified meshes&rdquo;, de Cignoni et al. IEEE Visualization &lsquo;98. El primero introdujo la idea de almacenar las normales de la superficie directamente en una textura, en lugar de los desplazamientos, aunque requería que el modelo de bajo detalle fuera generado por un algoritmo particular de simplificación restringida. Este último presentó un enfoque más sencillo que desacopla la malla poligonal alta y baja y permite la recreación de cualquier atributo del modelo de alto detalle (color, coordenadas de textura, desplazamientos, etc.) de una manera que no depende de cómo se creó el modelo de bajo detalle. La combinación de almacenar las normales en una textura, con el proceso de creación más general, sigue siendo utilizada por la mayoría de las herramientas disponibles actualmente.</p><h2 id=código-solución-y-resultados>Código (solución) y resultados
+<a class=anchor href=#c%c3%b3digo-soluci%c3%b3n-y-resultados>#</a></h2><p>Instrucciones de uso:
+En el seleccionador se puede intercambiar entre las 5 texturas predeterminadas que se tienen.</p><details><summary>Código vertex shader</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>attribute</span> <span style=color:#a6e22e>vec3</span> <span style=color:#a6e22e>aPosition</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>attribute</span> <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>aTexCoord</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>attribute</span> <span style=color:#a6e22e>vec3</span> <span style=color:#a6e22e>aNormal</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>mat4</span> <span style=color:#a6e22e>uProjectionMatrix</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>mat4</span> <span style=color:#a6e22e>uModelViewMatrix</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>uniform</span> <span style=color:#a6e22e>sampler2D</span> <span style=color:#a6e22e>uNoiseTexture</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>varying</span> <span style=color:#a6e22e>vec2</span> <span style=color:#a6e22e>vTexCoord</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>varying</span> <span style=color:#a6e22e>vec3</span> <span style=color:#a6e22e>vNoise</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec4</span> <span style=color:#a6e22e>noise</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>texture2D</span>(<span style=color:#a6e22e>uNoiseTexture</span>, <span style=color:#a6e22e>aTexCoord</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vNoise</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>noise</span>.<span style=color:#a6e22e>rgb</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vec4</span> <span style=color:#a6e22e>positionVec4</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vec4</span>(<span style=color:#a6e22e>aPosition</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> <span style=color:#a6e22e>amplitude</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>positionVec4</span>.<span style=color:#a6e22e>xyz</span> <span style=color:#f92672>+=</span> (<span style=color:#a6e22e>noise</span>.<span style=color:#a6e22e>rgb</span>)<span style=color:#f92672>/</span><span style=color:#ae81ff>5.0</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>aNormal</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>amplitude</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>gl_Position</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>uProjectionMatrix</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>uModelViewMatrix</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>positionVec4</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vTexCoord</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>aTexCoord</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details><iframe id=pyramid style=width:525px;height:525px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script>
+              
+let Shader; 
+let noise;
+let detailY;
+
+function preload() { 
+  Shader = loadShader('/showcase/sketches/mapping.vert', '/showcase/sketches/mapping.frag'); 
+  tex0 = loadImage('/showcase/sketches/text0.jpeg'); 
+  tex1 = loadImage('/showcase/sketches/text1.jpg'); 
+  tex2 = loadImage('/showcase/sketches/text2.jpeg'); 
+  tex3 = loadImage('/showcase/sketches/text3.jpg'); 
+  tex4 = loadImage('/showcase/sketches/text4.jpeg');
+  tex5 = loadImage('/showcase/sketches/wood.jpg');
+  option = createSelect(); 
+  option.position(15, 15); 
+  option.option('Textura 1'); 
+  option.option('Textura 2'); 
+  option.option('Textura 3'); 
+  option.option('Textura 4'); 
+  option.option('Textura 5'); 
+  option.option('Textura 6'); 
+  option.selected('Textura 1'); 
+}
+
+function setup() { 
+  createCanvas(500, 500, WEBGL); 
+  noStroke();
+  detailY = createSlider(2, 24, 6);
+  detailY.position(20, 40);
+  detailY.style('width', '80px'); }
+
+function draw() { 
+  background(250,150,150); 
+  shader(Shader); 
+  if(option.value()==&#34;Textura 1&#34;){ 
+    Shader.setUniform(&#34;uNoiseTexture&#34;, tex0); 
+  } else if(option.value()==&#34;Textura 2&#34;){ 
+    Shader.setUniform(&#34;uNoiseTexture&#34;, tex1); 
+  } else if(option.value()==&#34;Textura 3&#34;){ 
+    Shader.setUniform(&#34;uNoiseTexture&#34;, tex2); 
+  } else if(option.value()==&#34;Textura 4&#34;){ 
+    Shader.setUniform(&#34;uNoiseTexture&#34;, tex3); 
+  } else if(option.value()==&#34;Textura 5&#34;){ 
+    Shader.setUniform(&#34;uNoiseTexture&#34;, tex4); 
+  } else if(option.value()==&#34;Textura 6&#34;){ 
+    Shader.setUniform(&#34;uNoiseTexture&#34;, tex5); 
+  }
+  orbitControl();
+  rotateY(millis() / 4000);
+  ellipsoid(100, 200, 200, 12, detailY.value());
+  //ellipsoid(100, 200, 200);
+  //sphere(100,200,200);
+}
+
+            </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe><br><img src=/showcase/sketches/tex0.jpg alt=drawing width=200>
+<img src=/showcase/sketches/wood.jpg alt=drawing width=200>
+<img src=/showcase/sketches/wood2.jpg alt=drawing width=200>
+<img src=/showcase/sketches/xd.jpg alt=drawing width=200>
+<img src=/showcase/sketches/prueba.jpg alt=drawing width=200><p>En esta implementación se codifica las normales en el espacio del objeto, de modo que los componentes rojo, verde y azul (rgb) se corresponden directamente con las coordenadas X, Y y Z.</p><h2 id=conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro
+<a class=anchor href=#conclusiones-y-trabajo-futuro>#</a></h2><p>El trabajo realizado sobre el estudio tanto del bump mapping como del normal mapping permitió comprender los usos que una imagen sin aparente profundidad y solo con colores en ella puede tener si se usan adecuadamente los valores que dichos colores pueden representar, de tal manera que se altere la figura a la cual se le aplique dicha imagen, generando efectos visuales de texturas que imitan de mejor manera la realidad observada. También se encontró que dicha actividad puede ser realizada basados en modelos de iluminación, o con el uso de un geometry shader, pero debido a p5 no fue posible debido a que dentro de este no se encuentra la posibilidad de hacer uso de uno.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/56675f3129201792c9f918345328edfcc4c0c5cc title='Last modified by Gustavo Mojica | November 29, 2022' target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
+<span>November 29, 2022</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#normal-mapping>Normal mapping</a><ul><li><a href=#planteamiento-del-problema>Planteamiento del problema</a></li><li><a href=#antecedentes>Antecedentes</a></li><li><a href=#código-solución-y-resultados>Código (solución) y resultados</a></li><li><a href=#conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro</a></li></ul></li></ul></nav></div></aside></main></body></html>
