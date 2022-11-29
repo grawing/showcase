@@ -256,8 +256,6 @@ function handleFile(file) {
 
 En el procesamiento de la señal digital, el muestreo descendente (downsampling), la compresión y la decimación son términos asociados al proceso de remuestreo en un sistema de procesamiento de la señal digital multitasa. Tanto el downsampling como la decimación pueden ser sinónimos de compresión, o pueden describir un proceso completo de reducción del ancho de banda (filtrado) y de reducción de la tasa de muestreo.Cuando el proceso se realiza sobre una secuencia de muestras de una señal o una función continua, produce una aproximación de la secuencia que se habría obtenido muestreando la señal a una tasa menor. 
 
-Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator
-
 Al permitir tomar una imagen y convertirla en arte de píxeles, puedes definir el tamaño del píxel y  crear una imagen de píxeles. Para usar la configuración rápida por defecto necesitas un elemento desde donde dibujar la imagen y un elemento canvas. 
 
 
